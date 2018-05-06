@@ -1,36 +1,21 @@
 package com.hpkc.java.simplecalculator.main;
 
-import java.util.StringTokenizer;
-
-import javax.swing.text.StringContent;
-
 import com.hpkc.java.simplecalculator.gui.GUI;
-import com.hpkc.java.simplecalculator.logic.Logic;
 import com.hpkc.java.simplecalculator.logic.Master;
-import com.hpkc.java.simplecalculator.logic.MyTokenizer;
 
 public class Main {
 
 	public static void main(String[] args) {
 		
-		while(Master.token.hasMoreTokens()) {
-			Master.list.add(Master.token.nextToken().toString());
-		}
+		/*Master.inputString = "-2*2.2+4*2+8";
 		
-		if(Master.isOperator(Master.list.get(0))) {
-			Master.initialOp = Master.list.remove(0);
-		}
+		if(Master.isValid()) {
+			Master.calculate();
+		} else {
+			System.out.println("Bad Entry. Try Again!");
+		}*/
 		
-		while(Master.list.size() > 2) {
-			
-			if(Master.isSimpleOp(Master.inputString)) {
-				Master.simpleOp();
-			} else {
-				Master.complexOp();
-			}
-		}
-		
-		System.out.println("Final Answer is: " + Master.resultString);
+		GUI gui = new GUI();
 
 	}
 

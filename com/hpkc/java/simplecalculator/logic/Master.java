@@ -1,11 +1,38 @@
 package com.hpkc.java.simplecalculator.logic;
 
+import java.awt.Container;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
 
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
 public abstract class Master {
-	public static String inputString = "+2/4*2+9/3-1";
+	/*
+	 * The following variables are for the GUI (graphical User Interface
+	 * These are the needed components to build the visual part of the calculator
+	 * offB stands for 'off Button' and so on
+	 */
+	public static JFrame mainFrame;
+	public static Container container;
+	public static JPanel mainPanel, displaysPanel, buttonsPanel;
+	public static JLabel inputLabel, outputLabel;
+	public static JTextField inputField, outputField;
+	public static JButton offB, clearB, backB, dotB, equalB, 
+						addB, subtractB, multiplyB, divideB,
+						num1B, num2B, num3B, num4B, num5B,
+						num6B, num7B, num8B, num9B, num0B;
+	/*
+	 * The following variables are for calculations
+	 * First up are Strings
+	 * Then integer variables
+	 * And finally floats to hold values being worked on
+	 */
+	public static String inputString = "";
 	public static String valueAstring = "";
 	public static String valueBstring = "";
 	public static String resultString = "";
@@ -23,11 +50,14 @@ public abstract class Master {
 	public static float valueB = 0;
 	public static float result = 0;
 	
-	public static StringTokenizer token = new StringTokenizer(inputString, "+-*/", true);
+	/*
+	 * The class used to break up a string into parts 
+	 * It is broken up using operators (+ - * /)
+	 */
+	public static StringTokenizer token;
 	
+	//The list to hold the broken up string values
 	public static List<String> list = new ArrayList<>();
-	
-	
 	
 	public static boolean isOperator(String c) {
 		boolean ans = false;
@@ -181,5 +211,62 @@ public abstract class Master {
 				}
 			}
 		}
+	}
+	
+	public static void calculate() {
+		token = new StringTokenizer(inputString, "+-*/", true);
+		
+		while(Master.token.hasMoreTokens()) {
+			Master.list.add(Master.token.nextToken().toString());
+		}
+		
+		if(Master.isOperator(Master.list.get(0))) {
+			Master.initialOp = Master.list.remove(0);
+		}
+		
+		while(Master.list.size() > 2) {
+			
+			if(Master.isSimpleOp(Master.inputString)) {
+				Master.simpleOp();
+			} else {
+				Master.complexOp();
+			}
+		}
+		
+		System.out.println("Final Answer is: " + Master.resultString);
+	}
+	
+	public static boolean isValid() {
+		boolean ans = true;
+		
+		if(inputString.trim().length() < 3) {
+			ans = false;
+		} else{
+			
+			
+			for(int a = 0; a < inputString.length(); a ++) {
+				
+				
+				if(a == 0) {
+					if(inputString.charAt(a) == '*' || inputString.charAt(a) == '/') {
+						ans = false;
+					}
+				}
+				
+				if(isOperator(String.valueOf(inputString.charAt(a))) && isOperator(String.valueOf(inputString.charAt(a+1)))) {
+					ans = false;
+				}
+				
+				if(a == inputString.length()-1) {
+					if(isOperator(String.valueOf(inputString.charAt(a)))) {
+						ans = false;
+					}
+				}
+				
+			}
+		}
+		
+		
+		return ans;
 	}
 }

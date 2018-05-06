@@ -1,46 +1,58 @@
 package com.hpkc.java.simplecalculator.gui;
 
 import java.awt.Color;
-import java.awt.Container;
-import java.awt.Font;
+import java.awt.GridLayout;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.util.Locale;
 
-import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-import net.miginfocom.swing.MigLayout;
+import com.hpkc.java.simplecalculator.logic.Master;
 
-public class GUI extends JFrame{
+public class GUI{
 	
-	private JPanel mainPanel, displayPanel, inputButtonsPanel, calButtonsPanel;
-	private JTextField inputField;
-	private JTextArea display;
-	private JButton b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, addButton, subButton, multiButton, divButton, goButton;
-
 	public GUI() {
-		setTitle("Simple Calculator");
-		setSize(400, 600);
+		Master.mainFrame = new JFrame("Simple Calculator");
 		
+		Master.container = Master.mainFrame.getContentPane();
 		
-		mainPanel = new JPanel(new MigLayout("wrap 1"));
-		displayPanel = new JPanel();
-		display = new JTextArea(4, 20);
-		display.setText("3.5*4");
-		display.setEditable(false);
-		display.setFont(new Font("Ny Font", Font.CENTER_BASELINE, 20));
-		display.setForeground(Color.GRAY);
+		Master.mainPanel = new JPanel(new GridLayout(2, 1));
+		Master.displaysPanel = new JPanel(new GridLayout(4, 1));
+		Master.buttonsPanel = new JPanel();
+		Master.buttonsPanel.setLayout(new GridLayout(5, 4));
 		
-		b1 = new JButton("1");
+		Master.inputLabel = new JLabel("Problem:");
+		Master.outputLabel = new JLabel("Solutiion:");
 		
-		displayPanel.add(display);
-		mainPanel.add(displayPanel);
+		Master.inputField = new JTextField(30);
+		Master.inputField.setSelectedTextColor(Color.WHITE);
+		Master.outputField = new JTextField(30);
+		Master.outputField.setEditable(false);
 		
-		getContentPane().add(mainPanel);
-		setLocationRelativeTo(null);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setVisible(true);
+		Master.displaysPanel.add(Master.inputLabel);
+		Master.displaysPanel.add(Master.inputField);
+		Master.displaysPanel.add(Master.outputLabel);
+		Master.displaysPanel.add(Master.outputField);
+		
+		Master.mainPanel.add(Master.displaysPanel);
+		
+		Master.container.add(Master.mainPanel);
+		
+		Master.mainFrame.setSize(400, 600);
+		Master.mainFrame.pack();
+		Master.mainFrame.setLocationRelativeTo(null);
+		Master.mainFrame.addWindowListener(new WindowAdapter() {
+			@Override
+			public void windowClosing(WindowEvent e) {
+				System.exit(0);
+			}
+		});
+		
+		Master.mainFrame.setVisible(true);
 	}
 
 }
