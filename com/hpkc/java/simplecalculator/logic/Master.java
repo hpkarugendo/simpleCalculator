@@ -32,6 +32,7 @@ public abstract class Master {
 	 * Then integer variables
 	 * And finally floats to hold values being worked on
 	 */
+	public static String displayString = "";
 	public static String inputString = "";
 	public static String valueAstring = "";
 	public static String valueBstring = "";
@@ -216,6 +217,8 @@ public abstract class Master {
 	public static void calculate() {
 		token = new StringTokenizer(inputString, "+-*/", true);
 		
+		Master.list = new ArrayList<>();
+		
 		while(Master.token.hasMoreTokens()) {
 			Master.list.add(Master.token.nextToken().toString());
 		}
@@ -233,7 +236,9 @@ public abstract class Master {
 			}
 		}
 		
-		System.out.println("Final Answer is: " + Master.resultString);
+		Master.finalResultString = Master.resultString;
+		
+		System.out.println("Final Answer is: " + Master.finalResultString);
 	}
 	
 	public static boolean isValid() {
