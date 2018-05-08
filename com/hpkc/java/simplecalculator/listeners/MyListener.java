@@ -1,3 +1,9 @@
+
+/*
+ * By: Henry Patrick Karugendo
+ * Last Modified: 08 May 2018
+ * This class implements ActionListener and handles all click events
+ */
 package com.hpkc.java.simplecalculator.listeners;
 
 import java.awt.event.ActionEvent;

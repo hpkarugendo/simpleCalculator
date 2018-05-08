@@ -121,7 +121,7 @@
 			<td>MyListener():constructor</td>
 		</tr>
 		<tr>
-			<td></td>
+			<td>Master</td>
 			<td>
 				<ul>
 					<li>mainFrame : JFrame</li>

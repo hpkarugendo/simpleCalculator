@@ -1,3 +1,9 @@
+/*
+ * By: Henry Patrick Karugendo
+ * Last Modified: 08 May 2018
+ * The Class that contains all the Variables and error-checking and calculation methods
+ */
+
 package com.hpkc.java.simplecalculator.logic;
 
 import java.awt.Container;

@@ -1,8 +1,13 @@
+/*
+ * By: Henry Patrick Karugendo
+ * Last Modified: 08 May 2018
+ * This Class builds the Graphic User Interface of the Calculator
+ * All the variables are stored in the Master Class under the logic package
+ */
 package com.hpkc.java.simplecalculator.gui;
 
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.GridLayout;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
