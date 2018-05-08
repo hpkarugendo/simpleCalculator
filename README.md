@@ -1,7 +1,7 @@
 <h1>Simple Calculator</h1><br />
-<hr />
+<p>A simple Java calculator.</p>
 <h2>Description</h2>
-<p>A Simple Calculator built in Java</p>
+<p>This is a simple Calculator built in Java</p>
 <p>The Calculations order follows the BODMAS rule</p>
 <p>The BODMAS rule has the following order of precedency:</p>
 	<ul>
@@ -80,7 +80,7 @@
 	<li>JButton</li>
 </ul>
 <The Layout Manager used is from an external Java jar library called MigLayout. The files are included in the project folder under the sub-folder LIB. When the project is downloaded or cloned, the class path must be updated in the build path by adding 'eternal jars' and removing old locations.</p>
-<h3><u>How To:</u></h3>
+<h3><u>How To Use MigLayout Library:</u> <small>Do this before attemtpin to run the application</small></h3>
 <ol>
 	<li>In Eclipse or STS: Right-click the project name and go to properties</li>
 	<li>Under Java Build Path, go to Libraries and delete any associations of the MigLayout jars</li>
