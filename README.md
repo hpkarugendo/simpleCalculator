@@ -85,17 +85,17 @@
 	<li>In Eclipse or STS: Right-click the project name and go to properties</li>
 	<li>Under Java Build Path, go to Libraries and delete any associations of the MigLayout jars</li>
 	<li>Still in the same location click on ADD EXTERNAL JARS</li>
-	<li>Browse to the project folder, into the <em>lib</em> folder and add all the jars from there</li>
+	<li>Browse to the project folder, into the <b><em>lib</em></b> folder and add all the jars from there</li>
 </ol>
 <h2>Function Buttons in the GUI</h2>
 <ul>
 	<li>The <b>OFF</b> button terminates/closes the application</li>
 	<li>The <b>CLR</b> button clears the input field</li>
-	<li>The <b>BCK</b> button clears the input field character by character begining from the last added</li>
-	<li>The <b>| = |</b> button starts the process of calculations which begins with error checking that the input is valid for calculation in the context and capabilities of this specific program</li>
+	<li>The <b>BCK</b> button clears the input field character by character beginning from the last added character</li>
+	<li>The <b>| = |</b> button starts the process of calculations which begins with error-checking of the input for validity in the context and capabilities of this specific program</li>
 	<li>All other buttons input what's written on them into the input field.</li>
 </ul>
-<u2>Class Details</h2>
+<h2>Class Details</h2>
 <table>
 	<thead>
 		<tr>
