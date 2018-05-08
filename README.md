@@ -79,7 +79,7 @@
 	<li>JLabel</li>
 	<li>JButton</li>
 </ul>
-<The Layout Manager used is from an external Java jar library called <b><em>MigLayout</em></b>. The files are included in the project folder under the sub-folder LIB. When the project is downloaded or cloned, the class path must be updated in the build path by adding 'eternal jars' and removing old locations.</p>
+<p>The Layout Manager used is from an external Java jar library called <b><em>MigLayout</em></b>. The files are included in the project folder under the sub-folder LIB. When the project is downloaded or cloned, the class path must be updated in the build path by adding 'eternal jars' and removing old locations.</p>
 <h3><u>How To Use MigLayout Library:</u></h3>
 <ol>
 	<li>In Eclipse or STS: Right-click the project name and go to properties</li>
