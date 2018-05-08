@@ -185,3 +185,5 @@
 		</tr>
 	</tbody>
 </table>
+<h2>Screenshot</h2>
+<img src="https://hpkc.blob.core.windows.net/projects/Simple Calculator/Simple Calculator.jpg" title="Screenshot of the Application" alt="Screenshot of the Application">
